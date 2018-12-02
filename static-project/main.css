@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.height{
+
+    height: 300px;
+    overflow: hidden;
+}
+#tables{
+    transition: 1.2s;
+}
+
+.control-list{
+    margin-top: 3%;
+    float: right;
+}
+.navbar{
+    padding: 0px!important;
+    margin-bottom: 0.5%;
+    margin-top: 1%;
+}
+
+[v-cloak],
+.hidden {
+    display: none;
+}

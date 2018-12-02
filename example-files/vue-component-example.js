@@ -1,10 +1,12 @@
 const component = new Vue({
   el: '.some-class-name',
   template: '<div> <div/>',
-  data: {
-    props: 'Это видно в шаблонах',
-    first_name: "Вася",
-    last_name: "Пупкин"
+  data: function() {
+    return {
+      props: 'Это видно в шаблонах',
+      first_name: "Вася",
+      last_name: "Пупкин"
+    }
   },
   computed: {
     full_name: function(){
@@ -23,6 +25,7 @@ const component = new Vue({
     destroyed: function(){},
 
     customMethodsAlso: function(){
+      this.data
       //здесь у нас тоже есть доступ к data
     }
   }

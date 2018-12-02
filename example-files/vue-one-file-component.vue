@@ -10,11 +10,10 @@
     }
 </style>
 
-<template lang="jade">
-avatar(:user='user')
-input(type='text', v-model='content')
-button.blue(@click='submitComment')
-
+<template lang="html">
+    <h1> </h1>
+    <p> </p>
+    <input />
 </template>
 
 <script>
