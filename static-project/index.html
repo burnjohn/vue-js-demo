@@ -9,12 +9,14 @@
 <body id="app">
 <div class="container">
     <nav class="navbar navbar-light bg-light">
+
         <div class="form-inline" id="search">
             <transition name="fade">
-                <input v-model="value" v-on:input="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input v-on:input="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </transition>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </div>
+
         <div id="counter" v-cloak>
             <p class="items-count">{{ itemsTotal }}</p>
         </div>
@@ -25,52 +27,24 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Firs2t</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">nickname</th>
         </tr>
         </thead>
         <tbody>
 
-        <tr class="list-item">
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+        <tr class="list-item" v-for="(user, index) in users" v-show="user.isShown">
+            <th scope="row">{{ index+1 }}</th>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.nickName }}</td>
         </tr>
-        <tr class="list-item">
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr class="list-item">
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        <tr class="list-item">
-            <th scope="row">4</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr class="list-item">
-            <th scope="row">5</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        <tr class="list-item">
-            <th scope="row">6</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
+
         </tbody>
     </table>
 </div>
+
 <div class="container">
     <div class="control-list">
         <a id="prevList" onclick="GetPrevList()" class="btn btn-secondary" href="#">Prev</a>
@@ -79,7 +53,10 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
-<script src="./controller.js"></script>
+<script src="users.js"></script>
+<script src="event-emitter.js"></script>
+<script src="controls-controller.js"></script>
+<script src="table-controller.js"></script>
 
 </body>
 </html>
